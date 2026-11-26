@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sado Tech — Platform Kelas Online &amp; Bootcamp Teknologi Indonesia</title>
+  <meta name="description" content="Sado Tech adalah platform edukasi teknologi terdepan di Indonesia untuk kelas online mandiri dan pelatihan bootcamp intensif Full-Stack, AI Engineering, UI/UX Design, dan Data Science." />
+  <link rel="icon" type="image/svg+xml" href="assets/sadotech-logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient-bg" aria-hidden="true"></div>
+  <div class="ambient-grid" aria-hidden="true"></div>
+
+  <!-- =======================================================================
+       Sticky Top Navbar
+       ======================================================================= -->
+  <header class="top-header">
+    <div class="header-inner">
+      <a href="#hero" class="nb-pill brand-pill" aria-label="Sado Tech Home">
+        <img src="assets/sadotech-logo.svg" alt="Logo Sado Tech" class="brand-logo-img" />
+        <span>SADO TECH</span>
+      </a>
+
+      <nav class="header-nav" aria-label="Navigasi Utama">
+        <a href="#programs" data-i18n="nav_programs">Program</a>
+        <a href="#demo" data-i18n="nav_demo">Demo LMS</a>
+        <a href="#alumni" data-i18n="nav_alumni">Alumni</a>
+        <a href="#dokumentasi" data-i18n="nav_docs">Dokumentasi</a>
+        <a href="#pricing" data-i18n="nav_pricing">Paket Harga</a>
+      </nav>
+
+      <button type="button" id="langToggle" class="nb-pill lang-btn" aria-label="Ganti Bahasa Indonesia atau Inggris">
+        <span class="lang-badge">
+          <span id="langLabel">ID / EN</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 8l6 6"></path>
+            <path d="M4 14l6-6 2-3"></path>
+            <path d="M2 5h12"></path>
+            <path d="M7 2h1"></path>
+            <path d="M22 22l-5-10-5 10"></path>
+            <path d="M14 18h6"></path>
+          </svg>
+        </span>
+      </button>
+    </div>
+  </header>
+
+  <!-- =======================================================================
+       Floating Side Docks (Desktop)
+       ======================================================================= -->
+  <aside class="floating-dock-left" aria-label="Navigasi Cepat">
+    <a href="#hero" class="dock-btn active" data-section="hero" data-tooltip="Beranda" aria-label="Beranda">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    </a>
+    <a href="#demo" class="dock-btn" data-section="demo" data-tooltip="Demo LMS &amp; Kelas" aria-label="Demo LMS">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+    </a>
+    <a href="#alumni" class="dock-btn" data-section="alumni" data-tooltip="Alumni &amp; Bukti" aria-label="Alumni">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+    </a>
+    <a href="#dokumentasi" class="dock-btn" data-section="dokumentasi" data-tooltip="Dokumentasi Kelas" aria-label="Dokumentasi">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+    </a>
+    <a href="#pricing" class="dock-btn" data-section="pricing" data-tooltip="Paket Bootcamp" aria-label="Paket Harga">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+    </a>
+  </aside>
+
+  <aside class="floating-dock-right" aria-label="Aksi &amp; Komunitas">
+    <button type="button" class="dock-btn dock-social-blue open-mentor-modal" data-tooltip="Tanya Mentor AI" aria-label="Tanya Mentor">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+    </button>
+    <button type="button" class="dock-btn dock-social-cyan open-trial-modal" data-tooltip="Komunitas Discord &amp; Telegram" aria-label="Komunitas">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+    </button>
+    <a href="#alumni" class="dock-btn dock-social-insta" data-tooltip="Kisah Alumni @sadotech.id" aria-label="Instagram Alumni">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+    </a>
+    <button type="button" class="dock-btn dock-social-pink open-enroll-modal" data-plan="Bootcamp Intensif" data-price="Rp 2.400.000" data-tooltip="Daftar Bootcamp Sekarang" aria-label="Daftar Bootcamp">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+    </button>
+  </aside>
+
+  <main>
+    <!-- =====================================================================
+         Hero Section
+         ===================================================================== -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <div class="hero-badges">
+            <span class="nb-pill tag-pill tag-yellow" data-i18n="badge_1">🛡️ KURIKULUM UPDATE 2026</span>
+            <span class="nb-pill tag-pill tag-cyan" data-i18n="badge_2">⚡ AI CAREER MENTOR</span>
+            <span class="nb-pill tag-pill tag-lime" data-i18n="badge_3">💻 100% PROJECT-BASED</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span data-i18n="hero_line1">Sado Tech.</span><br />
+            <span data-i18n="hero_line2">Upgrade Skill Tech</span><br />
+            <span data-i18n="hero_line3">Lebih Cepat.</span><br />
+            <span class="hero-highlight" data-i18n="hero_highlight">CERDAS &amp; TERARAH</span>
+          </h1>
+
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Sado Tech — Platform kelas online &amp; pelatihan bootcamp teknologi terbaik di Indonesia: Full-Stack Web, AI Engineering, UI/UX Design, dan Data Science bersama mentor praktisi industri.
+          </p>
+
+          <div class="hero-ctas">
+            <button type="button" class="nb-pill btn-pink-glow open-trial-modal" data-i18n="cta_syllabus">
+              ⬇ AMBIL SILABUS GRATIS
+            </button>
+            <a href="#pricing" class="nb-pill btn-cyan-solid" data-i18n="cta_bootcamp">
+              GABUNG BOOTCAMP →
+            </a>
+            <a href="#demo" class="nb-pill btn-dark-pill" data-i18n="cta_video">
+              TONTON PREVIEW KELAS ▶
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <div class="stat-value">5,000+</div>
+              <div class="stat-label" data-i18n="stat_1">Alumni &amp; Siswa Aktif</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">24/7</div>
+              <div class="stat-label" data-i18n="stat_2">Mentoring &amp; Komunitas</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-value">94%</div>
+              <div class="stat-label" data-i18n="stat_3">Lulusan Terserap Kerja</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual-wrap">
+          <div class="hero-frame">
+            <span class="nb-pill live-status-pill">
+              <span class="live-dot" aria-hidden="true"></span>
+              <span data-i18n="live_badge">LIVE CODING...</span>
+            </span>
+            <img src="assets/hero-bootcamp.jpg" alt="Suasana belajar kolaboratif siswa bootcamp Sado Tech dengan editor kode futuristik" />
+          </div>
+
+          <div class="hero-sub-dock">
+            <div class="sub-dock-tags">
+              <span class="mini-pill mini-pink" data-i18n="subtag_1">ANTI-BINGUNG</span>
+              <span class="mini-pill mini-cyan" data-i18n="subtag_2">MENTOR PRO</span>
+              <span class="mini-pill mini-yellow" data-i18n="subtag_3">SERTIFIKAT RESMI</span>
+            </div>
+            <span class="sub-dock-meta" data-i18n="batch_info">Batch 14 dibuka • Kuota terbatas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         YouTube Channel Banner + Interactive LMS Terminal Showcase
+         ===================================================================== -->
+    <section id="demo" class="demo-section">
+      <div class="container">
+        <div class="yt-banner">
+          <div class="yt-left">
+            <div class="yt-logo-box" aria-hidden="true">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="8 5 19 12 8 19 8 5"></polygon>
+              </svg>
+            </div>
+            <div>
+              <div class="yt-handle">
+                <span>@SadoTechAcademy</span>
+                <span class="yt-verified" title="Terverifikasi">✓</span>
+              </div>
+              <div class="yt-sub" data-i18n="yt_sub">Channel Edukasi, Tutorial Coding &amp; Bedah Portofolio Resmi</div>
+            </div>
+          </div>
+          <button type="button" id="subscribeBtn" class="yt-btn" data-i18n="yt_btn">
+            ▶ SUBSCRIBE CHANNEL KAMI
+          </button>
+        </div>
+
+        <div class="section-heading">
+          <h2 data-i18n="demo_title">Demo Platform &amp; Kelas Interaktif</h2>
+          <p data-i18n="demo_subtitle">Rasakan langsung pengalaman belajar di LMS Sado Tech: ngoding di live code lab, tonton modul HD, dan uji kode bersama AI Code Reviewer.</p>
+        </div>
+
+        <div class="terminal-window">
+          <div class="terminal-topbar">
+            <div class="traffic-dots" aria-hidden="true">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-amber"></span>
+              <span class="dot dot-green"></span>
+            </div>
+            <div class="terminal-address">
+              <span>&gt;_ sado-lms-platform.app (Live Bootcamp Session...)</span>
+              <span id="terminalStatus" style="font-size:0.75rem; color:#16a34a;">● ONLINE</span>
+            </div>
+          </div>
+
+          <div class="terminal-tabs" role="tablist" aria-label="Demo Platform Sado Tech">
+            <button type="button" class="term-tab-btn active" data-tab="codelab" role="tab" aria-selected="true" data-i18n="tab_codelab">💻 Live Code Lab</button>
+            <button type="button" class="term-tab-btn" data-tab="videolab" role="tab" aria-selected="false" data-i18n="tab_video">🎬 Video Modul HD</button>
+            <button type="button" class="term-tab-btn" data-tab="aireview" role="tab" aria-selected="false" data-i18n="tab_ai">🤖 AI Code Reviewer</button>
+          </div>
+
+          <div class="terminal-body">
+            <!-- Panel 1: Live Code Lab -->
+            <div id="panel-codelab" class="term-panel active" role="tabpanel">
+              <div class="codelab-grid">
+                <div class="code-pane">
+                  <div class="pane-header">
+                    <span>bootcamp/module-04/career-api.ts</span>
+                    <button type="button" id="runCodeBtn" class="run-code-btn">▶ JALANKAN KODE</button>
+                  </div>
+                  <div class="code-content"><span class="tok-kw">import</span> { createSadoStudent } <span class="tok-kw">from</span> <span class="tok-str">'@sadotech/sdk'</span>;
+
+<span class="tok-kw">const</span> student = <span class="tok-fn">createSadoStudent</span>({
+  name: <span class="tok-str">'Raka Pratama'</span>,
+  track: <span class="tok-str">'Full-Stack &amp; AI Engineering'</span>,
+  projectsCompleted: <span class="tok-num">6</span>,
+  mentorReview: <span class="tok-kw">true</span>
+});
+
+<span class="tok-cm">// Hitung kesiapan kerja berdasarkan skor portofolio</span>
+<span class="tok-fn">console</span>.log(student.<span class="tok-fn">getCareerReadiness</span>());</div>
+                </div>
+
+                <div class="mentor-output-pane">
+                  <div class="console-box" id="consoleOutput">
+                    <div>$ klik "JALANKAN KODE" untuk melihat hasil live...</div>
+                    <div style="color:#64748b; margin-top:6px;">[LMS Ready] Sandbox Node v24 + TypeScript aktif.</div>
+                  </div>
+                  <div class="mentor-chat-card">
+                    <span class="mentor-badge">★ CATATAN MENTOR SENIOR</span>
+                    <p style="font-size:0.84rem; color:#e2e8f0;" data-i18n="mentor_note">
+                      "Struktur API kamu sudah bersih! Coba tambahkan validasi skema Zod di endpoint pendaftaran agar aman dari input kosong."
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 2: Video Modul HD -->
+            <div id="panel-videolab" class="term-panel" role="tabpanel">
+              <div class="video-lab-grid">
+                <div class="video-stage">
+                  <img src="assets/lms-preview.jpg" alt="Preview ruang kelas online interaktif Sado Tech" />
+                  <div class="video-overlay-bar">
+                    <div>
+                      <span class="mini-pill mini-yellow" id="activeChapterTag">MODUL 01</span>
+                      <div id="activeChapterTitle" style="font-weight:800; margin-top:6px; font-size:1rem;">Membangun REST API &amp; Auth Modern dengan Express + JWT</div>
+                    </div>
+                    <span class="mini-pill mini-cyan" id="activeChapterTime">24:15 HD</span>
+                  </div>
+                </div>
+                <div class="chapter-list">
+                  <button type="button" class="chapter-item active" data-tag="MODUL 01" data-title="Membangun REST API &amp; Auth Modern dengan Express + JWT" data-time="24:15 HD">
+                    <small>BAB 01 • 24 MENIT</small>
+                    <strong>Arsitektur REST API &amp; Security</strong>
+                  </button>
+                  <button type="button" class="chapter-item" data-tag="MODUL 02" data-title="Integrasi React State, Tailwind &amp; Realtime WebSocket" data-time="31:40 HD">
+                    <small>BAB 02 • 31 MENIT</small>
+                    <strong>Frontend Interaktif &amp; UI System</strong>
+                  </button>
+                  <button type="button" class="chapter-item" data-tag="MODUL 03" data-title="Deploy Aplikasi ke Cloud Production &amp; CI/CD Pipeline" data-time="19:50 HD">
+                    <small>BAB 03 • 19 MENIT</small>
+                    <strong>Cloud Deployment &amp; Portofolio</strong>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Panel 3: AI Code Reviewer -->
+            <div id="panel-aireview" class="term-panel" role="tabpanel">
+              <div class="ai-review-box">
+                <p style="font-size:0.88rem; color:#cbd5e1; margin-bottom:12px;" data-i18n="ai_prompt_label">Pilih kasus kode di bawah untuk melihat bagaimana AI Mentor Sado Tech mengoreksi tugasmu secara instan:</p>
+                <div class="ai-prompt-row">
+                  <button type="button" class="ai-chip active" data-case="sql">Optimasi Query SQL Lambat</button>
+                  <button type="button" class="ai-chip" data-case="react">Perbaiki Infinite Re-render React</button>
+                  <button type="button" class="ai-chip" data-case="ui">Audit Kontras &amp; Aksesibilitas UI</button>
+                </div>
+                <div class="ai-response-card" id="aiReviewOutput">
+                  <strong style="color:#00e5ff; display:block; margin-bottom:6px;">⚡ Diagnosa AI Mentor — Query SQL:</strong>
+                  Ditemukan <code>SELECT *</code> tanpa indeks pada kolom <code>user_id</code>. Tambahkan komposit index <code>CREATE INDEX idx_enroll_user ON enrollments(user_id, created_at DESC)</code> untuk memangkas waktu query dari 420ms menjadi 8ms.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Programs & 3-Step Roadmap
+         ===================================================================== -->
+    <section id="programs" class="programs-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-i18n="prog_title">Pilihan Kelas Online &amp; Bootcamp</h2>
+          <p data-i18n="prog_subtitle">Kurikulum disusun bersama Tech Lead dari perusahaan teknologi ternama agar skill kamu langsung relevan dengan kebutuhan industri.</p>
+        </div>
+
+        <div class="program-filters" role="group" aria-label="Filter Program Belajar">
+          <button type="button" class="filter-pill active" data-filter="all" data-i18n="filter_all">Semua Program</button>
+          <button type="button" class="filter-pill" data-filter="bootcamp" data-i18n="filter_bootcamp">Bootcamp Intensif</button>
+          <button type="button" class="filter-pill" data-filter="online" data-i18n="filter_online">Kelas Online Mandiri</button>
+        </div>
+
+        <div class="programs-grid">
+          <article class="program-card" data-category="bootcamp">
+            <div>
+              <div class="program-top">
+                <span class="program-type type-bootcamp">BOOTCAMP INTENSIF</span>
+                <span class="program-duration">16 MINGGU • LIVE</span>
+              </div>
+              <h3 style="margin-top:12px;">Full-Stack Web &amp; AI Engineering</h3>
+              <p style="margin-top:6px;">Kuasai frontend modern, backend scalable, database SQL, hingga integrasi LLM &amp; AI agent dari nol sampai siap kerja.</p>
+            </div>
+            <div class="program-stack">
+              <span class="stack-chip">TypeScript</span>
+              <span class="stack-chip">React &amp; Next.js</span>
+              <span class="stack-chip">Node.js</span>
+              <span class="stack-chip">PostgreSQL</span>
+              <span class="stack-chip">AI API</span>
+            </div>
+            <div class="program-footer">
+              <span style="font-weight:800; color:#ffe600;">6 Portfolio Apps</span>
+              <button type="button" class="program-cta-link open-enroll-modal" data-plan="Bootcamp Intensif" data-track="Full-Stack Web &amp; AI Engineering" data-price="Rp 2.400.000">Daftar Program →</button>
+            </div>
+          </article>
+
+          <article class="program-card" data-category="bootcamp">
+            <div>
+              <div class="program-top">
+                <span class="program-type type-bootcamp">BOOTCAMP INTENSIF</span>
+                <span class="program-duration">12 MINGGU • LIVE</span>
+              </div>
+              <h3 style="margin-top:12px;">UI/UX Product Design Mastery</h3>
+              <p style="margin-top:6px;">Pelajari user research, wireframe, design system di Figma, prototyping interaktif, dan usability testing dengan studi kasus produk nyata.</p>
+            </div>
+            <div class="program-stack">
+              <span class="stack-chip">Figma Pro</span>
+              <span class="stack-chip">Design System</span>
+              <span class="stack-chip">UX Research</span>
+              <span class="stack-chip">Prototyping</span>
+            </div>
+            <div class="program-footer">
+              <span style="font-weight:800; color:#ffe600;">4 Case Studies</span>
+              <button type="button" class="program-cta-link open-enroll-modal" data-plan="Bootcamp Intensif" data-track="UI/UX Product Design Mastery" data-price="Rp 2.400.000">Daftar Program →</button>
+            </div>
+          </article>
+
+          <article class="program-card" data-category="online">
+            <div>
+              <div class="program-top">
+                <span class="program-type type-online">KELAS ONLINE</span>
+                <span class="program-duration">AKSES SELAMANYA</span>
+              </div>
+              <h3 style="margin-top:12px;">Data Science &amp; GenAI Python</h3>
+              <p style="margin-top:6px;">Belajar fleksibel kapan saja: Python data wrangling, visualisasi BI dashboard, machine learning, dan workflow otomasi AI.</p>
+            </div>
+            <div class="program-stack">
+              <span class="stack-chip">Python</span>
+              <span class="stack-chip">Pandas &amp; SQL</span>
+              <span class="stack-chip">Scikit-Learn</span>
+              <span class="stack-chip">GenAI</span>
+            </div>
+            <div class="program-footer">
+              <span style="font-weight:800; color:#00e5ff;">120+ Video HD</span>
+              <button type="button" class="program-cta-link open-enroll-modal" data-plan="Kelas Online Mandiri" data-track="Data Science &amp; GenAI Python" data-price="Rp 299.000">Mulai Kelas →</button>
+            </div>
+          </article>
+
+          <article class="program-card" data-category="online">
+            <div>
+              <div class="program-top">
+                <span class="program-type type-online">KELAS ONLINE</span>
+                <span class="program-duration">AKSES SELAMANYA</span>
+              </div>
+              <h3 style="margin-top:12px;">Flutter Mobile App Developer</h3>
+              <p style="margin-top:6px;">Bangun aplikasi Android &amp; iOS performa tinggi dari satu codebase lengkap dengan payment gateway &amp; state management.</p>
+            </div>
+            <div class="program-stack">
+              <span class="stack-chip">Flutter</span>
+              <span class="stack-chip">Dart</span>
+              <span class="stack-chip">Firebase</span>
+              <span class="stack-chip">REST API</span>
+            </div>
+            <div class="program-footer">
+              <span style="font-weight:800; color:#00e5ff;">3 Mobile Apps</span>
+              <button type="button" class="program-cta-link open-enroll-modal" data-plan="Kelas Online Mandiri" data-track="Flutter Mobile App Developer" data-price="Rp 299.000">Mulai Kelas →</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- 3-Step Learning Flow (Matching Image 3 top) -->
+        <div class="steps-grid">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <div>
+              <h4 data-i18n="step1_title">Pilih Jalur &amp; Kelas</h4>
+              <p data-i18n="step1_desc">Tentukan kelas online mandiri atau bootcamp live intensif sesuai target karier dan waktumu.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <div>
+              <h4 data-i18n="step2_title">Bangun Portofolio Nyata</h4>
+              <p data-i18n="step2_desc">Kerjakan project riil dengan kode terstruktur &amp; dapatkan feedback 1-on-1 dari mentor senior.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <div>
+              <h4 data-i18n="step3_title">Raih Sertifikat &amp; Karier</h4>
+              <p data-i18n="step3_desc">Dapatkan sertifikat resmi, bedah CV, simulasi interview, dan akses ke 120+ hiring partner.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="roadmap-cta-wrap">
+          <a href="#pricing" class="nb-pill btn-cyan-solid" data-i18n="see_pricing">LIHAT HARGA &amp; PAKET 🏷️</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Alumni Stories & Enrollment Proof (Matching Image 3)
+         ===================================================================== -->
+    <section id="alumni" class="alumni-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-i18n="alumni_title">Kisah Sukses &amp; Bukti Alumni</h2>
+          <p data-i18n="alumni_subtitle">Bukti nyata kelulusan, testimoni chat, dan penyaluran kerja peserta. Klik kartu untuk melihat detail.</p>
+        </div>
+
+        <div class="proof-grid" id="alumniGrid">
+          <button type="button" class="proof-card" data-alumni="0">
+            <div class="proof-screen proof-screen-chat">
+              <div class="proof-avatar-row">
+                <span class="proof-avatar">RP</span>
+                <div class="proof-meta">
+                  <strong>Raka Pratama</strong>
+                  <span>Batch 11 • Full-Stack</span>
+                </div>
+              </div>
+              <div class="proof-bubble">Kak mentor, alhamdulillah baru aja lolos offering Frontend Engineer di Tokopedia!</div>
+              <div class="proof-bubble sent">Mantap Raka! Portofolio Next.js kamu memang solid banget 🔥</div>
+            </div>
+            <div class="proof-footer">
+              <span class="proof-badge">Alumni • Tokopedia</span>
+              <span class="proof-hint">[Klik untuk lihat detail]</span>
+            </div>
+          </button>
+
+          <button type="button" class="proof-card" data-alumni="1">
+            <div class="proof-screen proof-screen-cert">
+              <div class="proof-avatar-row">
+                <span class="proof-avatar" style="background:#ffe600;">NP</span>
+                <div class="proof-meta">
+                  <strong>Nadia Putri</strong>
+                  <span>Batch 12 • UI/UX</span>
+                </div>
+              </div>
+              <div style="border:1.5px dashed rgba(0,229,255,0.6); border-radius:10px; padding:10px; text-align:center;">
+                <div style="font-size:0.65rem; color:#00e5ff; font-weight:800;">SERTIFIKAT KELULUSAN</div>
+                <div style="font-size:0.86rem; font-weight:800; margin:4px 0;">UI/UX Product Design</div>
+                <div style="font-size:0.68rem; color:#8cff2e; font-weight:700;">Predikat: Cumlaude (98/100)</div>
+              </div>
+            </div>
+            <div class="proof-footer">
+              <span class="proof-badge">Alumni • Traveloka</span>
+              <span class="proof-hint">[Klik untuk lihat detail]</span>
+            </div>
+          </button>
+
+          <button type="button" class="proof-card" data-alumni="2">
+            <div class="proof-screen proof-screen-chat">
+              <div class="proof-avatar-row">
+                <span class="proof-avatar" style="background:#ff2e93; color:#fff;">DW</span>
+                <div class="proof-meta">
+                  <strong>Dimas Wijaya</strong>
+                  <span>Kelas Online • Backend</span>
+                </div>
+              </div>
+              <div class="proof-bubble">Dulu nol coding, ikut kelas mandiri + mentoring 3 bulan langsung bisa deploy microservice.</div>
+              <div class="proof-bubble sent">Selamat bergabung di tim Gojek, Dimas! 🚀</div>
+            </div>
+            <div class="proof-footer">
+              <span class="proof-badge">Alumni • Gojek</span>
+              <span class="proof-hint">[Klik untuk lihat detail]</span>
+            </div>
+          </button>
+
+          <button type="button" class="proof-card" data-alumni="3">
+            <div class="proof-screen proof-screen-cert">
+              <div class="proof-avatar-row">
+                <span class="proof-avatar" style="background:#8cff2e;">SR</span>
+                <div class="proof-meta">
+                  <strong>Siti Rahma</strong>
+                  <span>Batch 12 • Data AI</span>
+                </div>
+              </div>
+              <div style="border:1.5px dashed rgba(255,230,0,0.7); border-radius:10px; padding:10px; text-align:center;">
+                <div style="font-size:0.65rem; color:#ffe600; font-weight:800;">BUKTI PENYALURAN KERJA</div>
+                <div style="font-size:0.86rem; font-weight:800; margin:4px 0;">Data Analyst</div>
+                <div style="font-size:0.68rem; color:#00e5ff; font-weight:700;">Penempatan: 19 Hari Lulus</div>
+              </div>
+            </div>
+            <div class="proof-footer">
+              <span class="proof-badge">Alumni • Mandiri</span>
+              <span class="proof-hint">[Klik untuk lihat detail]</span>
+            </div>
+          </button>
+
+          <button type="button" class="proof-card" data-alumni="4">
+            <div class="proof-screen proof-screen-chat">
+              <div class="proof-avatar-row">
+                <span class="proof-avatar" style="background:#00e5ff;">KH</span>
+                <div class="proof-meta">
+                  <strong>Kevin Halim</strong>
+                  <span>Batch 13 • Full-Stack</span>
+                </div>
+              </div>
+              <div class="proof-bubble">Mock interview di Sado Tech ngebantu banget. Akhirnya tembus kerja remote Singapura!</div>
+              <div class="proof-bubble sent">Bangga banget Kevin! Keep shipping great code! 💻</div>
+            </div>
+            <div class="proof-footer">
+              <span class="proof-badge">Alumni • Remote SG</span>
+              <span class="proof-hint">[Klik untuk lihat detail]</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Dokumentasi Kegiatan & Pelatihan
+         ===================================================================== -->
+    <section id="dokumentasi" class="docs-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-i18n="docs_title">Dokumentasi Kelas &amp; Pelatihan</h2>
+          <p data-i18n="docs_subtitle">Momen praktik langsung, presentasi prototipe IoT &amp; teknologi, serta kebersamaan peserta bersama mentor Sado Tech. Klik foto untuk memperbesar.</p>
+        </div>
+
+        <div class="docs-grid">
+          <button type="button" class="doc-card" data-doc-src="assets/dokumentasi/doc-1.jpg" data-doc-title="Presentasi Prototipe Smart Home &amp; IoT">
+            <div class="doc-img-wrap">
+              <img src="assets/dokumentasi/doc-1.jpg" alt="Peserta dan mentor Sado Tech mempresentasikan maket smart home dan rangkaian IoT" />
+              <span class="doc-tag tag-yellow" data-i18n="doc1_tag">PRAKTIK IOT</span>
+            </div>
+            <div class="doc-caption">
+              <strong data-i18n="doc1_title">Presentasi Prototipe Smart Home</strong>
+              <span data-i18n="doc1_desc">Peserta memamerkan hasil project maket &amp; diagram rangkaian bersama mentor.</span>
+            </div>
+          </button>
+
+          <button type="button" class="doc-card" data-doc-src="assets/dokumentasi/doc-2.jpg" data-doc-title="Foto Bersama Peserta Pelatihan Batch Aktif">
+            <div class="doc-img-wrap">
+              <img src="assets/dokumentasi/doc-2.jpg" alt="Foto bersama seluruh peserta kelas pelatihan Sado Tech di ruang kelas" />
+              <span class="doc-tag tag-cyan" data-i18n="doc2_tag">SESI KELAS</span>
+            </div>
+            <div class="doc-caption">
+              <strong data-i18n="doc2_title">Kebersamaan Kelas Tatap Muka</strong>
+              <span data-i18n="doc2_desc">Antusiasme peserta bootcamp menyelesaikan tantangan proyek mingguan.</span>
+            </div>
+          </button>
+
+          <button type="button" class="doc-card" data-doc-src="assets/dokumentasi/doc-3.jpg" data-doc-title="Squad Engineering &amp; Hardware Lab">
+            <div class="doc-img-wrap">
+              <img src="assets/dokumentasi/doc-3.jpg" alt="Tim peserta putra pelatihan teknologi Sado Tech berfoto di ruang lab" />
+              <span class="doc-tag tag-lime" data-i18n="doc3_tag">TIM LAB</span>
+            </div>
+            <div class="doc-caption">
+              <strong data-i18n="doc3_title">Squad Engineering Lab</strong>
+              <span data-i18n="doc3_desc">Kolaborasi tim peserta dalam perakitan sistem dan pemrograman terapan.</span>
+            </div>
+          </button>
+
+          <button type="button" class="doc-card" data-doc-src="assets/dokumentasi/doc-4.jpg" data-doc-title="Demo Day &amp; Apresiasi Karya Peserta">
+            <div class="doc-img-wrap">
+              <img src="assets/dokumentasi/doc-4.jpg" alt="Momen Demo Day pelatihan Sado Tech dengan hasil karya peserta" />
+              <span class="doc-tag tag-pink" data-i18n="doc4_tag">DEMO DAY</span>
+            </div>
+            <div class="doc-caption">
+              <strong data-i18n="doc4_title">Demo Day &amp; Apresiasi Karya</strong>
+              <span data-i18n="doc4_desc">Penutupan sesi praktik dengan hasil karya nyata siap portofolio.</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         Pricing Section (Matching Image 5)
+         ===================================================================== -->
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-i18n="pricing_title">Investasi Untuk Masa Depanmu</h2>
+          <p data-i18n="pricing_subtitle">Pilih paket belajar — kelas online mandiri atau bootcamp intensif dengan jaminan bimbingan karier.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <!-- Card 1 -->
+          <div class="pricing-card">
+            <div>
+              <h3 class="plan-name" data-i18n="plan1_name">Kelas Online Mandiri</h3>
+              <div class="price-box price-yellow">Rp 299K</div>
+              <p class="plan-desc" data-i18n="plan1_desc">Akses penuh 1 jalur kelas video HD — sekali bayar, akses selamanya.</p>
+              <ul class="plan-features">
+                <li><span class="check-circle">✓</span><span data-i18n="p1_f1">120+ video materi HD terstruktur dari dasar</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p1_f2">Source code project &amp; e-book ringkasan lengkap</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p1_f3">Grup diskusi Discord &amp; Telegram 24/7</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p1_f4">Sertifikat kelulusan digital terverifikasi</span></li>
+              </ul>
+            </div>
+            <button type="button" class="plan-cta plan-cta-white open-enroll-modal" data-plan="Kelas Online Mandiri" data-price="Rp 299.000" data-i18n="plan1_cta">
+              MULAI BELAJAR ⚡
+            </button>
+          </div>
+
+          <!-- Card 2 (Featured) -->
+          <div class="pricing-card featured">
+            <span class="popular-ribbon" data-i18n="popular_badge">PALING POPULER</span>
+            <div>
+              <h3 class="plan-name" data-i18n="plan2_name">Bootcamp Intensif</h3>
+              <div class="price-box price-cyan">Rp 2.4JT</div>
+              <p class="plan-desc" data-i18n="plan2_desc">Program 16 minggu live class + portofolio + career coaching (bisa cicilan 0%).</p>
+              <ul class="plan-features">
+                <li><span class="check-circle">✓</span><span data-i18n="p2_f1">Live session interaktif 3x seminggu bersama Mentor Pro</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p2_f2">Review kode 1-on-1 &amp; 5+ project portofolio industri</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p2_f3">Bedah CV, LinkedIn &amp; simulasi technical interview</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p2_f4">Penyaluran kerja ke 120+ perusahaan hiring partner</span></li>
+              </ul>
+            </div>
+            <button type="button" class="plan-cta plan-cta-pink open-enroll-modal" data-plan="Bootcamp Intensif" data-price="Rp 2.400.000" data-i18n="plan2_cta">
+              AMBIL KURSI PRO 🛒
+            </button>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="pricing-card">
+            <div>
+              <h3 class="plan-name" data-i18n="plan3_name">Privat &amp; Corporate Track</h3>
+              <div class="price-box price-yellow">Rp 999K</div>
+              <p class="plan-desc" data-i18n="plan3_desc">Bimbingan privat 1-on-1 atau pelatihan khusus tim perusahaan per bulan.</p>
+              <ul class="plan-features">
+                <li><span class="check-circle">✓</span><span data-i18n="p3_f1">Jadwal fleksibel eksklusif bersama Senior Tech Lead</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p3_f2">Kurikulum custom sesuai kebutuhan karier atau tim IT</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p3_f3">Audit arsitektur kode &amp; bimbingan capstone project</span></li>
+                <li><span class="check-circle">✓</span><span data-i18n="p3_f4">Laporan evaluasi progres berkala &amp; sertifikat resmi</span></li>
+              </ul>
+            </div>
+            <button type="button" class="plan-cta plan-cta-white open-enroll-modal" data-plan="Privat &amp; Corporate Track" data-price="Rp 999.000" data-i18n="plan3_cta">
+              KONSULTASI TRACK ⚡
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         FAQ Section
+         ===================================================================== -->
+    <section id="faq" class="faq-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-i18n="faq_title">Pertanyaan Yang Sering Diajukan</h2>
+          <p data-i18n="faq_subtitle">Masih ragu memulai? Cek jawaban cepat seputar sistem belajar di Sado Tech.</p>
+        </div>
+
+        <div class="faq-list">
+          <div class="faq-item open">
+            <button type="button" class="faq-trigger">
+              <span data-i18n="faq1_q">Apakah pemula tanpa background IT bisa ikut bootcamp Sado Tech?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content" data-i18n="faq1_a">
+              Bisa banget! Lebih dari 62% alumni Sado Tech berasal dari jurusan non-IT. Kurikulum dimulai dari fundamental logika pemrograman atau dasar desain hingga level siap kerja dengan pendampingan mentor.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger">
+              <span data-i18n="faq2_q">Apa perbedaan Kelas Online Mandiri dan Bootcamp Intensif?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content" data-i18n="faq2_a">
+              Kelas Online Mandiri cocok bagi kamu yang ingin belajar fleksibel lewat video HD kapan saja. Sedangkan Bootcamp Intensif memiliki jadwal tatap muka live via Zoom 3x seminggu, bimbingan project riil, mock interview, dan akses penyaluran kerja ke 120+ partner.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-trigger">
+              <span data-i18n="faq3_q">Apakah tersedia pembayaran cicilan atau kode promo?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-content" data-i18n="faq3_a">
+              Ya! Untuk paket Bootcamp Intensif tersedia cicilan 0% hingga 6 bulan. Kamu juga bisa menggunakan kode promo SADOTECH20 saat pendaftaran di website ini untuk potongan biaya 20%.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =======================================================================
+       Footer
+       ======================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="#hero" class="nb-pill brand-pill" style="margin-bottom:14px;">
+            <img src="assets/sadotech-logo.svg" alt="Logo Sado Tech" class="brand-logo-img" />
+            <span>SADO TECH</span>
+          </a>
+          <p style="font-size:0.88rem; color:var(--text-muted); max-width:340px;" data-i18n="footer_about">
+            PT Sado Tech Edukasi Nusantara — Akselerator talenta digital Indonesia melalui kelas online terstruktur dan pelatihan bootcamp berbasis project industri.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_programs">Program Unggulan</h4>
+          <ul>
+            <li><a href="#programs">Full-Stack Web &amp; AI Engineering</a></li>
+            <li><a href="#programs">UI/UX Product Design Mastery</a></li>
+            <li><a href="#programs">Data Science &amp; GenAI Python</a></li>
+            <li><a href="#programs">Flutter Mobile App Developer</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 data-i18n="footer_contact">Hubungi Kami</h4>
+          <ul>
+            <li>Email: halo@sadotech.id</li>
+            <li>WhatsApp: +62 812-9000-7430</li>
+            <li>Kampus Digital: Jakarta Selatan &amp; Online</li>
+            <li><a href="#pricing" data-i18n="footer_promo">Gunakan Promo: SADOTECH20</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Sado Tech Academy. All rights reserved.</span>
+        <span data-i18n="footer_made">Dibangun untuk mencetak talenta teknologi siap industri.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =======================================================================
+       Bottom Floating Chrome (Scroll Progress Pill, Free Trial CTA, Live Toast)
+       ======================================================================= -->
+  <div class="scroll-progress-pill" aria-label="Progres membaca halaman">
+    <div class="progress-track">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-pct">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="18" height="12" rx="2" ry="2"></rect><line x1="23" y1="13" x2="23" y2="11"></line></svg>
+      <span id="progressText">0%</span>
+    </div>
+  </div>
+
+  <button type="button" class="floating-demo-btn open-trial-modal">
+    <span data-i18n="float_demo">⬇ COBA KELAS</span>
+    <span class="free-tag" data-i18n="free_tag">GRATIS</span>
+  </button>
+
+  <div class="live-toast" id="liveToast" role="status" aria-live="polite">
+    <div class="toast-icon">🎓</div>
+    <div class="toast-body">
+      <div id="toastMessage"><strong>A***</strong> baru saja mendaftar <strong>Bootcamp Intensif</strong></div>
+      <span class="toast-time" id="toastTime">Baru saja</span>
+    </div>
+    <button type="button" class="toast-close" id="closeToastBtn" aria-label="Tutup notifikasi">✕</button>
+  </div>
+
+  <!-- =======================================================================
+       Modal 1: Enrollment & Promo Checkout Modal
+       ======================================================================= -->
+  <div class="modal-backdrop" id="enrollModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="enrollTitle">
+      <div class="modal-header">
+        <h3 id="enrollTitle">Daftar Program Sado Tech</h3>
+        <button type="button" class="modal-close" data-close-modal="enrollModal">✕</button>
+      </div>
+
+      <form id="enrollForm">
+        <div class="form-group">
+          <label for="enrollPlan">Paket Pilihan</label>
+          <select id="enrollPlan" class="form-control">
+            <option value="Kelas Online Mandiri" data-price="299000">Kelas Online Mandiri — Rp 299.000</option>
+            <option value="Bootcamp Intensif" data-price="2400000" selected>Bootcamp Intensif — Rp 2.400.000</option>
+            <option value="Privat &amp; Corporate Track" data-price="999000">Privat &amp; Corporate Track — Rp 999.000</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="enrollTrack">Jalur Keahlian</label>
+          <select id="enrollTrack" class="form-control">
+            <option value="Full-Stack Web &amp; AI Engineering">Full-Stack Web &amp; AI Engineering</option>
+            <option value="UI/UX Product Design Mastery">UI/UX Product Design Mastery</option>
+            <option value="Data Science &amp; GenAI Python">Data Science &amp; GenAI Python</option>
+            <option value="Flutter Mobile App Developer">Flutter Mobile App Developer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="enrollName">Nama Lengkap</label>
+          <input type="text" id="enrollName" class="form-control" placeholder="Contoh: Budi Santoso" required />
+        </div>
+
+        <div class="form-group">
+          <label for="enrollEmail">Email Aktif</label>
+          <input type="email" id="enrollEmail" class="form-control" placeholder="budi@email.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="enrollPromo">Kode Promo (Coba: SADOTECH20)</label>
+          <div class="promo-row">
+            <input type="text" id="enrollPromo" class="form-control" placeholder="SADOTECH20" />
+            <button type="button" id="applyPromoBtn" class="promo-btn">PAKAI</button>
+          </div>
+          <small id="promoFeedback" style="display:block; margin-top:4px; font-weight:700;"></small>
+        </div>
+
+        <div class="summary-box">
+          <div style="display:flex; justify-content:space-between; align-items:center;">
+            <span>Total Investasi Belajar:</span>
+            <span class="summary-price" id="enrollTotalPrice">Rp 2.400.000</span>
+          </div>
+        </div>
+
+        <button type="submit" class="plan-cta plan-cta-pink">KONFIRMASI PENDAFTARAN ⚡</button>
+      </form>
+
+      <div id="enrollSuccess" class="success-ticket" style="display:none;">
+        <h4 style="font-size:1.1rem; font-weight:800; margin-bottom:6px;">🎉 Kursi Belajarmu Berhasil Dipesan!</h4>
+        <p id="enrollTicketText" style="font-size:0.88rem; margin-bottom:12px;"></p>
+        <button type="button" class="plan-cta plan-cta-white" data-close-modal="enrollModal">TUTUP</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       Modal 2: Free Trial Class & Syllabus Modal
+       ======================================================================= -->
+  <div class="modal-backdrop" id="trialModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="trialTitle">
+      <div class="modal-header">
+        <h3 id="trialTitle">🎁 Akses Kelas Trial &amp; Silabus Gratis</h3>
+        <button type="button" class="modal-close" data-close-modal="trialModal">✕</button>
+      </div>
+      <p style="font-size:0.9rem; color:#3f3f46; margin-bottom:14px;">
+        Dapatkan akses gratis ke 3 video pengantar bootcamp, panduan roadmap karier tech 2026, dan undangan komunitas Discord Sado Tech!
+      </p>
+      <form id="trialForm">
+        <div class="form-group">
+          <label for="trialName">Nama Panggilan</label>
+          <input type="text" id="trialName" class="form-control" placeholder="Masukkan namamu" required />
+        </div>
+        <div class="form-group">
+          <label for="trialWhatsapp">Nomor WhatsApp / Email</label>
+          <input type="text" id="trialWhatsapp" class="form-control" placeholder="0812xxxx atau email@domain.com" required />
+        </div>
+        <button type="submit" class="plan-cta plan-cta-pink">BUKA AKSES SILABUS GRATIS 🚀</button>
+      </form>
+      <div id="trialSuccess" class="success-ticket" style="display:none; margin-top:12px;">
+        <h4 style="font-weight:800; margin-bottom:4px;">✅ Silabus &amp; Link Trial Terkirim!</h4>
+        <p style="font-size:0.86rem;">Silakan cek WhatsApp/Email kamu atau langsung eksplorasi Live Code Lab di halaman utama Sado Tech.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       Modal 3: Alumni & Dokumentasi Lightbox Detail
+       ======================================================================= -->
+  <div class="modal-backdrop" id="alumniModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="alumniModalName">
+      <div class="modal-header">
+        <h3 id="alumniModalName">Detail Cerita Alumni</h3>
+        <button type="button" class="modal-close" data-close-modal="alumniModal">✕</button>
+      </div>
+      <div id="alumniModalBody"></div>
+    </div>
+  </div>
+
+  <!-- =======================================================================
+       Modal 4: Mentor AI & Konsultasi Modal
+       ======================================================================= -->
+  <div class="modal-backdrop" id="mentorModal" aria-hidden="true">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="mentorTitle">
+      <div class="modal-header">
+        <h3 id="mentorTitle">💬 Konsultasi Jalur Karier Sado Tech</h3>
+        <button type="button" class="modal-close" data-close-modal="mentorModal">✕</button>
+      </div>
+      <p style="font-size:0.88rem; color:#3f3f46; margin-bottom:12px;">
+        Bingung pilih kelas yang paling cocok? Pilih latar belakangmu di bawah untuk rekomendasi cepat dari Career Advisor kami:
+      </p>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px;">
+        <button type="button" class="nb-pill tag-pill tag-yellow mentor-ask" data-ans="coding">Baru mulai nol coding</button>
+        <button type="button" class="nb-pill tag-pill tag-cyan mentor-ask" data-ans="design">Suka visual &amp; produk</button>
+        <button type="button" class="nb-pill tag-pill tag-lime mentor-ask" data-ans="data">Tertarik data &amp; AI</button>
+      </div>
+      <div id="mentorAnswerBox" style="background:#f4f4f5; border:2px solid #000; border-radius:14px; padding:14px; font-size:0.88rem; font-weight:600;">
+        Klik salah satu tombol di atas untuk mendapatkan rekomendasi jalur belajar yang paling pas untukmu!
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
